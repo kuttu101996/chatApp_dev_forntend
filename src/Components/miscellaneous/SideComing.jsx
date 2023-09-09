@@ -142,7 +142,7 @@ const SideComing = () => {
           </Button>
         </Tooltip>
         <Text fontSize={"2xl"} fontWeight={"bold"}>
-          Comm-U-Cate
+          Commu-Cate
         </Text>
         <div>
           <Menu>
