@@ -28,7 +28,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
       const { data } = await axios.get(
-        "https://commu-cate.onrender.com/api/chat",
+        "https://cc-qzzn.onrender.com/api/chat",
         config
       );
       setChats(data);
@@ -107,34 +107,53 @@ const MyChats = ({ fetchAgain }) => {
                   color={selectedChat === chat ? "white" : "black"}
                   key={chat._id}
                 >
-                  <div>
-                    {chat.users?.map((ele) => {
-                      if (ele._id !== loggedUser._id) {
-                        return (
-                          <Tooltip
-                            label={ele.name}
-                            placement="bottom-start"
-                            hasArrow
-                            key={ele._id}
-                          >
-                            <Avatar
-                              mt={"7px"}
-                              mr={1}
-                              size={"sm"}
-                              cursor={"pointer"}
-                              name={ele.name}
-                              src={ele.pic}
-                            />
-                          </Tooltip>
-                        );
-                      }
-                    })}
-                  </div>
+                  {chat.isGroupChat ? (
+                    <div>
+                      <Tooltip
+                        label={`Group Identity Picture`}
+                        placement="bottom-start"
+                        hasArrow
+                      >
+                        <Avatar
+                          mt={"7px"}
+                          mr={1}
+                          size={"sm"}
+                          cursor={"pointer"}
+                          name={chat.chatName}
+                          src={chat.chatPic}
+                        />
+                      </Tooltip>
+                    </div>
+                  ) : (
+                    <div>
+                      {chat.users?.map((ele) => {
+                        if (ele._id !== loggedUser._id) {
+                          return (
+                            <Tooltip
+                              label={ele.name}
+                              placement="bottom-start"
+                              hasArrow
+                              key={ele._id}
+                            >
+                              <Avatar
+                                mt={"7px"}
+                                mr={1}
+                                size={"sm"}
+                                cursor={"pointer"}
+                                name={ele.name}
+                                src={ele.pic}
+                              />
+                            </Tooltip>
+                          );
+                        }
+                      })}
+                    </div>
+                  )}
                   <div>
                     <Text>
                       {!chat.isGroupChat
                         ? getSender(loggedUser, chat.users)
-                        : chat.chatName}
+                        : `${chat.chatName} - (Group Chat)`}
                     </Text>
                     {chat.latestMessage && (
                       <Text fontSize="xs">
