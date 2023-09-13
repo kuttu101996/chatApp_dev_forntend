@@ -144,7 +144,7 @@ const Login = () => {
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="blue"
+        colorScheme="twitter"        
         width={"100%"}
         style={{ marginTop: 15 }}
         onClick={handleSubmit}
@@ -154,7 +154,7 @@ const Login = () => {
       </Button>
       <Button
         variant="solid"
-        colorScheme="red"
+        colorScheme="blackAlpha"
         width="100%"
         onClick={() => {
           setEmail("guest@example.com");
