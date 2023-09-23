@@ -1,9 +1,11 @@
 // rafce
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
 import Home from "./Components/Home";
 import Chat from "./Components/chatCompo/Chat";
+import { ChatState } from "./context/ChatProvider";
+import { useEffect } from "react";
 
 function App() {
   const { setUser } = ChatState();
