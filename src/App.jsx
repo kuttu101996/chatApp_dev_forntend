@@ -4,9 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
 import Home from "./Components/Home";
 import Chat from "./Components/chatCompo/Chat";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { ChatState } from "./context/ChatProvider";
 
 function App() {
   const { setUser } = ChatState();
@@ -16,11 +13,10 @@ function App() {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
     if (userInfo) {
-      setUser(userInfo);
+      setUser(userInfo)
       navigate("/chat");
     } else navigate("/");
   }, [navigate]);
-
   return (
     <div className="App">
       <Routes>
