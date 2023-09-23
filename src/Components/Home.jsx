@@ -30,7 +30,7 @@ const Home = () => {
         <Text fontSize="3xl">Commu-Cate</Text>
       </Box>
       <Box bg={"white"} w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs variant="soft-rounded" colorScheme="green">
+        <Tabs variant="soft-rounded" colorScheme="twitter">
           <TabList mb="1em">
             <Tab width="49%">Login</Tab>
             <Tab width="49%">Sign Up</Tab>
