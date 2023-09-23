@@ -184,11 +184,9 @@ const SideComing = () => {
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        bg={"whatsapp.100"}
+        bg={"Background"}
         w={"100%"}
-        p={"5px 10px 5px 10px"}
-        borderWidth={"5px"}
-        borderColor={"lightgrey"}
+        p={"7px 12px 7px 15px"}
       >
         <Tooltip label="Search User for Chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
@@ -198,8 +196,8 @@ const SideComing = () => {
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize={"2xl"} fontWeight={"bold"}>
-          Commu-Cate
+        <Text color={"#1da1f2"} fontSize={"2xl"} fontWeight={"bold"}>
+          Communi-Cate
         </Text>
         <div>
           <Menu>
@@ -220,9 +218,13 @@ const SideComing = () => {
                   {notification.length}
                 </h5>
               )}
-              {/*
-               */}
-              <BellIcon fontSize={"2xl"} m={1} marginBottom={0} marginTop={0} />
+              <BellIcon
+                color={"#1da1f2"}
+                fontSize={"2xl"}
+                m={1}
+                marginBottom={0}
+                marginTop={0}
+              />
             </MenuButton>
             <MenuList p={2}>
               {!notification.length && "No new Messages"}
@@ -265,13 +267,13 @@ const SideComing = () => {
               />
             </MenuButton>
             <MenuList color={"grey"}>
-              <ProfileModal user={user.userExist}>
+              <ProfileModal userExist={user.userExist}>
                 <MenuItem>My Profile</MenuItem>
               </ProfileModal>
               <MenuDivider />
               <MenuItem onClick={logoutHandler}>Logout</MenuItem>
               <MenuDivider />
-              <ConfirmationModal handleFunction={()=> handleDeleteAccount()}>
+              <ConfirmationModal handleFunction={() => handleDeleteAccount()}>
                 <MenuItem>Delete My Account</MenuItem>
               </ConfirmationModal>
             </MenuList>

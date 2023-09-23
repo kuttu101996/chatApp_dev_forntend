@@ -1,7 +1,7 @@
 // rafce
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import LandingPage from "./Components/LandingPage";
+// import LandingPage from "./Components/LandingPage";
 import Home from "./Components/Home";
 import Chat from "./Components/chatCompo/Chat";
 import { ChatState } from "./context/ChatProvider";
@@ -22,8 +22,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<LandingPage />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/chat" element={<Chat />} />
       </Routes>
     </div>
