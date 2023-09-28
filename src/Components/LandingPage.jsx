@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Box,
   Flex,
@@ -11,20 +11,9 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { ChatState } from "../context/ChatProvider";
 
 function LandingPage() {
-  const { setUser } = ChatState();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-
-    if (userInfo) {
-      setUser(userInfo);
-      navigate("/chat");
-    } else navigate("/");
-  }, [navigate]);
 
   return (
     <div style={{ width: "100%" }}>
@@ -41,7 +30,14 @@ function LandingPage() {
           <Heading as="h1" size="2xl" color="white">
             Welcome to the Home Page of <br /> Commu Cate
           </Heading>
-          <Text mt={"2"} fontSize={"larger"} color={"MenuText"} fontWeight={"bold"}>Creating Connections that matter.</Text>
+          <Text
+            mt={"2"}
+            fontSize={"larger"}
+            color={"MenuText"}
+            fontWeight={"bold"}
+          >
+            Creating Connections that matter.
+          </Text>
           <Text mt="4" fontSize="xl" color="white">
             Discover the amazing features of our product.
           </Text>

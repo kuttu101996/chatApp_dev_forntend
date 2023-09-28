@@ -162,11 +162,11 @@ const Signup = () => {
           value={name}
           onChange={(e) => {
             const text = e.target.value;
-            if (text.length <= 5) {
+            if (text.length <= 25) {
               setName(text);
             } else {
               toast({
-                title: "The maximum limit is 35 letters",
+                title: "The maximum limit is 25 letters",
                 status: "error",
                 duration: 3000,
                 isClosable: true,
@@ -174,7 +174,7 @@ const Signup = () => {
               });
             }
           }}
-          maxLength={35}
+          maxLength={25}
         />
       </FormControl>
       <FormControl>

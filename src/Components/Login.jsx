@@ -52,18 +52,18 @@ const Login = () => {
         .then((data) => {
           if (data.message === "User not found") {
             toast({
-              title: "No User found with this EmailID",
-              status: "warning",
+              title: "You can Register yourself with this Email",
+              status: "info",
               duration: 3000,
               isClosable: true,
               position: "top-left",
             });
             toast({
-              title: "You can Register yourself with this Email",
-              status: "info",
+              title: "No User found with this EmailID",
+              status: "warning",
               duration: 3000,
               isClosable: true,
-              position: "top-right",
+              position: "top-left",
             });
           }
           if (data.message === "Login Successful") {

@@ -27,7 +27,9 @@ const Home = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="3xl">Communi-Cate</Text>
+        <Text color={"#1da1f2"} fontSize="3xl">
+          Commu-Cate
+        </Text>
       </Box>
       <Box bg={"white"} w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs variant="soft-rounded" colorScheme="twitter">

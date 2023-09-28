@@ -134,7 +134,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         setMessages([...messages, newMessageRcv]);
       }
     });
-  });
+  }, []);
 
   const typingHandler = (e) => {
     setNewMessage(e.target.value);
@@ -189,9 +189,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               </>
             ) : (
               <>
-                {getSender(user.userExist, selectedChat.users)}
+                <Text color={"#1da1f2"}>
+                  {getSender(user.userExist, selectedChat.users)}
+                </Text>
                 <ProfileModal
-                  user={getSenderFull(user.userExist, selectedChat.users)}
+                  userExist={getSenderFull(user.userExist, selectedChat.users)}
                 ></ProfileModal>
               </>
             )}
@@ -253,7 +255,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Text fontSize={"4xl"}>Select an user to start conversation</Text>
+          <Text color={"#1da1f2"} fontSize={"4xl"}>
+            Select an user to start conversation
+          </Text>
         </Box>
       )}
     </>
