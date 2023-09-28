@@ -41,7 +41,7 @@ const Login = () => {
         email,
         password,
       };
-      await fetch(`https://cc-qzzn.onrender.com/api/user/login`, {
+      await fetch(`https://cc-yqsx.onrender.com/api/user/login`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -144,13 +144,28 @@ const Login = () => {
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="twitter"        
+        colorScheme="twitter"
         width={"100%"}
         style={{ marginTop: 15 }}
         onClick={handleSubmit}
         isLoading={loading}
       >
         Login
+      </Button>
+      <Button
+        variant="solid"
+        colorScheme="cyan"
+        width="100%"
+        onClick={() => {
+          alert("On going process");
+        }}
+      >
+        <img
+          style={{ width: "42px" }}
+          src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+          alt="Google"
+        />
+        Login with Google
       </Button>
       <Button
         variant="solid"
